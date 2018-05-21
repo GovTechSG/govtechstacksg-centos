@@ -18,7 +18,7 @@ Pushed to vagrant cloud as govtechstacksg/centos
 
     https://www.virtualbox.org/wiki/Downloads
 
-# Creating the ```Vagrantfile```
+# Creating the Vagrantfile
 
     touch Vagrantfile
 
