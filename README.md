@@ -68,8 +68,19 @@ vagrant up
 vagrant destroy --force
 vagrant box remove govtechstacksg/centos
 ```
+
 As per Vagrant box conventions, the credentials to use the image are as follows:
 ```
 Username: vagrant
 Password: vagrant
 ```
+# Possible Errors
+
+    
+
+`Stderr: VBoxManage: error: Implementation of the USB 3.0 controller not found!`
+
+To fix this problem, either install the 'Oracle VM VirtualBox Extension Pack' or disable USB 3.0 support in the VM settings
+
+-   [Oracle VM VirtualBox Extension Pack](https://download.virtualbox.org/virtualbox/5.2.12/Oracle_VM_VirtualBox_Extension_Pack-5.2.12.vbox-extpack)
+
