@@ -1,13 +1,30 @@
+
 # GovTechStack.sg Centos Training VM
 
 This is a Packer script to build a Centos 7 Desktop image for use in GovTechStack.sg training sessions.
 
 Pushed to vagrant cloud as govtechstacksg/centos
 
+# Prerequisites
+
+ - Vagrant
+ - VirtualBox
+
+**Vagrant download link**
+
+    https://www.vagrantup.com/downloads.html
+
+**VirtualBox download link**
+
+    https://www.virtualbox.org/wiki/Downloads
+
+# Creating the ```Vagrantfile```
+
+    touch Vagrantfile
 
 # Running the Vagrant image
 
-Copy the following text to a file named ```Vagrantfile```
+Copy the following text to a file  ```Vagrantfile```
 ```ruby
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
@@ -40,11 +57,16 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-Run the following commands:
+Run the command:
+
+```bash
+vagrant up
+```
+
+> If you have a previous image already built, run the following commands to remove them. Then run ```vagrant up```
 ```bash
 vagrant destroy --force
 vagrant box remove govtechstacksg/centos
-vagrant up
 ```
 
 As per Vagrant box conventions, the credentials to use the image are as follows:
@@ -52,3 +74,13 @@ As per Vagrant box conventions, the credentials to use the image are as follows:
 Username: vagrant
 Password: vagrant
 ```
+# Possible Errors
+
+    
+
+`Stderr: VBoxManage: error: Implementation of the USB 3.0 controller not found!`
+
+To fix this problem, either install the 'Oracle VM VirtualBox Extension Pack' or disable USB 3.0 support in the VM settings
+
+-   [Oracle VM VirtualBox Extension Pack](https://download.virtualbox.org/virtualbox/5.2.12/Oracle_VM_VirtualBox_Extension_Pack-5.2.12.vbox-extpack)
+
