@@ -1,13 +1,30 @@
+
 # GovTechStack.sg Centos Training VM
 
 This is a Packer script to build a Centos 7 Desktop image for use in GovTechStack.sg training sessions.
 
 Pushed to vagrant cloud as govtechstacksg/centos
 
+# Prerequisites
+
+ - Vagrant
+ - VirtualBox
+
+**Vagrant download link**
+
+    https://www.vagrantup.com/downloads.html
+
+**VirtualBox download link**
+
+    https://www.virtualbox.org/wiki/Downloads
+
+# Creating the ```Vagrantfile```
+
+    touch Vagrantfile
 
 # Running the Vagrant image
 
-Copy the following text to a file named ```Vagrantfile```
+Copy the following text to a file  ```Vagrantfile```
 ```ruby
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
@@ -40,13 +57,17 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-Run the following commands:
+Run the command:
+
 ```bash
-vagrant destroy --force
-vagrant box remove govtechstacksg/centos
 vagrant up
 ```
 
+> If you have a previous image already built, run the following commands to remove them. Then run ```vagrant up```
+```bash
+vagrant destroy --force
+vagrant box remove govtechstacksg/centos
+```
 As per Vagrant box conventions, the credentials to use the image are as follows:
 ```
 Username: vagrant
